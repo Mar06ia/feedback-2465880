@@ -1,29 +1,25 @@
-import React from 'react'
-const App = () =>{
+//dependencias necesarias
+import { useState } from "react";
+//data
+import Resenias from "./data/Resenia";
+//componentes
+//import Header from "./componentes/Header.jsx";
+//import Resenia from "./components/Resenia";
+import ReseniaList from "./components/ReseniaList";
 
-    const bootcamps = [
-        {
-         id: 1,
-         name: 'PHP Bootcamp',
-         average_rating:8
-        },
-        {
-         id:2,
-         name: 'javascript Bootcamp',
-         average_rating: 10
-        }   
-    ]
-  return (
-    <div className=''>
-        <h1>Listado de Bootcamps</h1>
-        <ul>
-            { bootcamps.map((bootcamp)=> (
-                <li>{ bootcamp.name}</li>
-              ))
-             }
-        </ul>  
-    </div>
- )
-}
+    function App(){
+          
+        //crear estado para arreglo de resenias
+        const [lista_resenias,
+              setListaResenias] = useState(Resenias)
 
-export default App
+        return (
+            <div className="container">
+                <ReseniaList listaresenias={lista_resenias}/>
+                <Resenias/>
+            </div>
+       
+        )
+    }
+
+export default App;
