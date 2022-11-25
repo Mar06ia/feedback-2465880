@@ -17,4 +17,4 @@ const Resenias = [
     },
 ]
 
-export default FeedbackData;
+export default Resenias;
